@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import programas.bdconexion;
 
-@WebServlet(urlPatterns = {"/extraer/get_clientes"})
-public class get_clientes extends HttpServlet {
+@WebServlet(urlPatterns = {"/extraer/get_vendedor"})
+public class get_vendedor extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,7 +33,7 @@ public class get_clientes extends HttpServlet {
                 try {
                     cn.crearConexion();
                 } catch (Exception ex) {
-                    Logger.getLogger(get_clientes.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(get_vendedor.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
                 ResultSet rs = cn.consultar(request.getParameter("sql"));
@@ -41,29 +41,29 @@ public class get_clientes extends HttpServlet {
                     out.println("<tr onclick=\"seleccion($(this));\">");
                     
                     out.println("<td>");
-                    out.println(rs.getString("cli_id"));
+                    out.println(rs.getString("ven_id"));
                     out.println("</td>");
                     
                     out.println("<td>");
-                    out.println(rs.getString("cli_nom"));
+                    out.println(rs.getString("ven_nom"));
                     out.println("</td>");
                     
                     out.println("<td>");
-                    out.println(rs.getString("cli_ape"));
+                    out.println(rs.getString("ven_ape"));
                     out.println("</td>");
                     
                     out.println("<td>");
-                    out.println(rs.getString("cli_ci"));
+                    out.println(rs.getString("ven_ci"));
                     out.println("</td>");
                     
                     out.println("<td>");
-                    out.println(rs.getString("cli_direcc"));
+                    out.println(rs.getString("ven_direcc"));
                     out.println("</td>");
                     
                     out.println("</tr>");
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(get_clientes.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(get_vendedor.class.getName()).log(Level.SEVERE, null, ex);
                 out.println(ex.getMessage());
             }
         }
