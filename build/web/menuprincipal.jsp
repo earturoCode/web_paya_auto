@@ -13,7 +13,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>MENU PLAYA DE AUTO</title>
+    <title>MENU PLAYA DE AUTOS</title>
     <link rel="shortcut icon" href="graficos/checklist.png">
     
     <!-- CSS -->
@@ -41,7 +41,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="menuprincipal.jsp">
-                            <img src="graficos/formenu.png" width="80" alt="Logo" />
+                            <img src="graficos/formenu.png" width="50" alt="Logo" />
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="menu">
@@ -53,10 +53,10 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <% if ("1".equals(nivel)) { %>
-                                    <li><a href="gui_regisclientes.jsp"><img src="graficos/Cliente.png" width="20" height="20" /> CLIENTES</a></li>
+                                    <li><a href="registro_cliente.jsp"><img src="graficos/Cliente.png" width="20" height="20" /> CLIENTES</a></li>
                                     <% } %>
-                                    <li><a href="gui_regisvendedor.jsp"><img src="graficos/Vendedor.png" width="20" height="20" /> VENDEDORES</a></li>
-                                    <li><a href="gui_regisauto.jsp"><img src="graficos/Auto.png" width="20" height="20" /> AUTOS</a></li>
+                                    <li><a href="registro_vendedor.jsp"><img src="graficos/Vendedor.png" width="20" height="20" /> VENDEDORES</a></li>
+                                    <li><a href="registro_autos.jsp"><img src="graficos/Auto.png" width="20" height="20" /> AUTOS</a></li>
                                 </ul>
                             </li>
                         </ul>

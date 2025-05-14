@@ -37,7 +37,7 @@ session="true" language="java" import="java.util.*" %>
         <div class="card p-4">
           <div class="text-center">
             <img src="graficos/auto-splassh-unscreen.gif" alt="Logo" class="avatar mb-3">
-            <h3 class="mb-4">Playa De Auto 2.0</h3>
+            <h3 class="mb-4">Playa De Autos 2.0</h3>
           </div>
 
           <form action="sql_acceso.jsp" method="post">
