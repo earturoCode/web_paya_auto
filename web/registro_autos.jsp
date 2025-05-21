@@ -1,3 +1,4 @@
+<%@page import="programas.bdconexion"%>
 <%@include file="controles/chequearsesion.jsp" %>
 <%
     String vusuario = (String) sesionOk.getAttribute("usuario");
@@ -42,12 +43,29 @@
                             <div class="col-md-2">
                                 <label class="control-label" for="marca">Marca</label> 
                             </div>
+
                             <div class="col-md-4">
-                                <select name="cboMarca" id="cboMarca" class="form-control" disabled="">
+                                <select class="form-control" id="cboMarcas">
                                     <option value="0">Seleccione una marca</option>
+                                    <%
+                                        try {
+                                            bdconexion cn = new bdconexion();
+                                            cn.crearConexion();
+                                            ResultSet tim = cn.consultar("select mar_id, mar_nom from marcas order by mar_id");
+                                            while (tim.next()) {
+                                    %>
+                                            <option value="<%= tim.getString("mar_id") %>"><%= tim.getString("mar_nom") %></option>
+                                    <%
+                                            }
+                                        } catch (Exception e) {
+                                            out.println("<option>Error al cargar marcas</option>");
+                                            e.printStackTrace();
+                                        }
+                                    %>
                                 </select>
                             </div>
                         </div>
+    
                         
                         <div class="form-group">
                             <div class="col-md-3"></div>
@@ -173,17 +191,12 @@
                                     <thead>
                                         <tr>
                                             <th class="warning">Código</th>
-                                            <th class="warning">Marca ID</th>
+                                            
+                                            <th class="warning">Nombre Marca</th>
                                             <th class="warning">Modelo</th>
-                                            <th class="warning">Color</th>
-                                            <th class="warning">Versión</th>
-                                            <th class="warning">Motor</th>
-                                            <th class="warning">Serie</th>
-                                            <th class="warning">Placa</th>
-                                            <th class="warning">KM</th>
                                             <th class="warning">Estado</th>
+
                                         </tr>
-                                    
                                     </thead>
                                     <tbody>
 

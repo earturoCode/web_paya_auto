@@ -68,4 +68,8 @@ public class bdconexion
             JOptionPane.showMessageDialog(null, "error al listar datos" + e);
         }
     } 
+
+    public void cerrarConexion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
